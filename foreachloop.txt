@@ -1,0 +1,17 @@
+using System;
+
+namespace foreachloop
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] name = { "Pooja", "Kamal", "Hari", "Doll" };
+            foreach (string i in name)
+            {
+                Console.WriteLine(i);
+            }
+        }
+    }
+}
+     

@@ -1,0 +1,22 @@
+using System;
+
+namespace Constructor
+{
+
+    public class Student
+    {
+        public Student()
+        {
+            Console.WriteLine("Default constructor");
+        }
+        public static void Main(string[] args)
+        {
+            Student s1 = new Student();
+            Student s2 = new Student();
+            Student s3 = new Student();
+        }
+    }
+}
+
+
+ 

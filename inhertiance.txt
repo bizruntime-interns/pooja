@@ -1,0 +1,22 @@
+using System;
+
+public class employee
+
+{
+    public float salary = 50000;
+}
+public class digitalmarkerter : employee
+{
+    public float bonus = 1000;
+}
+class Inhertiance
+{
+    public static void Main(String[] args)
+    {
+        digitalmarkerter d1 = new digitalmarkerter();
+        Console.WriteLine("Salary:" + d1.salary);
+        Console.WriteLine("Bonus:" + d1.bonus);
+
+    }
+}
+

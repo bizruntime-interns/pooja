@@ -1,0 +1,20 @@
+using System;
+
+namespace array_coversion
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] intArray = new int[5];
+            // Integer array with 5 elements
+            intArray[0] = 100;
+            intArray[1] = 300;
+            intArray[2] = 440;
+            intArray[3] = 50;
+            intArray[4] = 66;
+            string[] strArray = Array.ConvertAll(intArray, ele => ele.ToString());
+            Console.WriteLine(string.Join("|", strArray));
+        }
+    }
+}

@@ -1,0 +1,32 @@
+using System;
+using System.Threading;
+public class MyThread
+{
+    public void Thread1()
+    {
+        int num = 11;
+        if (num % 2 == 0)
+        {
+            Console.WriteLine("It is even number");
+        }
+        else
+        {
+            Console.WriteLine("It is odd number");
+        }
+
+    }
+    public class ThreadExample
+    {
+        public static void Main()
+        {
+            MyThread mt = new MyThread();
+            Thread t1 = new Thread(new ThreadStart(mt.Thread1));
+            Thread t2 = new Thread(new ThreadStart(mt.Thread1));
+            Thread t3 = new Thread(new ThreadStart(mt.Thread1));
+            t1.Start();
+            t2.Start();
+            t3.Start();
+        }
+    }
+}
+

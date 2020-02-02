@@ -1,0 +1,18 @@
+using System;
+
+namespace swap_number
+{
+    public class SwapExample
+    {
+        static void Main(string[] args)
+        {
+            int a = 9, b = 10;
+            Console.WriteLine("Before swap a= " + a + " b= " + b);
+            a = a * b; //a=90 (9*10)      
+            b = a / b; //b=9 (90/10)      
+            a = a / b; //a=10 (90/5)    
+            Console.Write("After swap a= " + a + " b= " + b);
+        }
+    }
+}
+   

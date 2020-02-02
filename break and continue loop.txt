@@ -1,0 +1,22 @@
+using System;
+
+namespace break_and_continue_loop
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int i = 0;
+            while (i < 10)
+            {
+                Console.WriteLine(i);
+                i++;
+                if (i == 13)
+                {
+                    break;
+                }
+            }
+        }
+    }
+}
+    

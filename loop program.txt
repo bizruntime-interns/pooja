@@ -1,0 +1,17 @@
+using System;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int i = 0;
+            while (i < 23)
+            {
+                Console.WriteLine(i);
+                i++;
+            }
+        }
+    }
+}

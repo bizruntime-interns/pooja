@@ -1,0 +1,15 @@
+using System;
+
+namespace StringConcatExample
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string s1 = "Garden ";
+            string s2 = "City";
+            Console.WriteLine(string.Concat(s1, s2));
+        }
+    }
+}
+   

@@ -1,0 +1,35 @@
+using System;
+
+namespace Parameterized_Constructor
+{
+
+    public class Student
+    {
+        public int id;
+        public String name;
+
+        public Student(int i, String n)
+        {
+            id = i;
+            name = n;
+
+        }
+        public void display()
+        {
+            Console.WriteLine(id + " " + name + " ");
+        }
+    }
+    class TestStudent
+    {
+        public static void Main(string[] args)
+        {
+            Student s1 = new Student(101, "Anu");
+            Student s2 = new Student(102, "Kamal");
+            s1.display();
+            s2.display();
+
+        }
+    }
+}
+
+

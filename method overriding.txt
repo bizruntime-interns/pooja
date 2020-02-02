@@ -1,0 +1,29 @@
+using System;
+
+namespace Method_Overriding
+{
+
+        public class Bird
+        {
+            public virtual void eat()
+            {
+                Console.WriteLine("Eating...");
+            }
+        }
+        public class Parrot : Bird
+        {
+            public override void eat()
+            {
+                Console.WriteLine("Eating pulses...");
+            }
+        }
+        public class TestOverriding
+        {
+            public static void Main()
+            {
+                Parrot p = new Parrot();
+                p.eat();
+            }
+        }
+    }
+        

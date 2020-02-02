@@ -1,0 +1,31 @@
+using System;
+using System.Threading;
+
+public class MyThread
+{
+    public static void Thread1()
+    {
+        Console.WriteLine("red");
+    }
+    public static void Thread2()
+    {
+        Console.WriteLine("green");
+    }
+    public static void Thread3()
+    {
+        Console.WriteLine("pink");
+    }
+
+}
+public class ThreadExample
+{
+    public static void Main()
+    {
+        Thread t1 = new Thread(new ThreadStart(MyThread.Thread1));
+        Thread t2 = new Thread(new ThreadStart(MyThread.Thread2));
+        Thread t3 = new Thread(new ThreadStart(MyThread.Thread3));
+        t1.Start();
+        t2.Start();
+        t3.Start();
+    }
+}

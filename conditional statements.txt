@@ -1,0 +1,26 @@
+using System;
+
+namespace programcontrolstatement
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int time = 21;
+            if (time < 10)
+            {
+                Console.WriteLine("Good morning.");
+            }
+            else if (time < 20)
+            {
+                Console.WriteLine("Good day.");
+            }
+            else
+            {
+                Console.WriteLine("Good afternoon.");
+            }
+        }
+    }
+}
+    
+

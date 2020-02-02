@@ -1,0 +1,16 @@
+using System;
+    public struct Rectangle
+    {
+        public int width, height;
+
+    }
+public class TestStructs
+{
+    public static void Main()
+    {
+        Rectangle rect = new Rectangle();
+        rect.width = 10;
+        rect.height = 9;
+        Console.WriteLine("Area of Rectangle is: " + (rect.width * rect.height));
+    }
+}

@@ -1,0 +1,20 @@
+using System;
+
+namespace Exception_handling
+{
+    public class Ex
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+                int[] myNumbers = { 1, 2, 3 };
+                Console.WriteLine(myNumbers[11]);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+using System;
+using System.Threading;
+
+public class MyThread
+{
+    public void Thread1()
+    {
+        Thread t = Thread.CurrentThread;
+        Console.WriteLine(t.Name + " is name");
+    }
+}
+public class ThreadExample
+{
+    public static void Main()
+    {
+        MyThread mt = new MyThread();
+        Thread t1 = new Thread(new ThreadStart(mt.Thread1));
+        Thread t2 = new Thread(new ThreadStart(mt.Thread1));
+        Thread t3 = new Thread(new ThreadStart(mt.Thread1));
+        Thread t4 = new Thread(new ThreadStart(mt.Thread1));
+        t1.Name = "Kamal";
+        t2.Name = "Pooja";
+        t3.Name = "Hari";
+        t4.Name = "Pradeep";
+        t1.Start();
+        t2.Start();
+        t3.Start();
+        t4.Start();
+    }
+}

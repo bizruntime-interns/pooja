@@ -1,0 +1,43 @@
+using System;
+
+namespace Polymorphism
+{
+
+  class Bird  // Base class (parent) 
+        {
+            public virtual void birdSound()
+            {
+                Console.WriteLine("The bird makes a sound");
+            }
+        }
+
+        class Parrot : Bird  // Derived class (child) 
+        {
+            public override void birdSound()
+            {
+                Console.WriteLine("The parrot says:squawk");
+            }
+        }
+
+        class Pigeon : Bird  // Derived class (child) 
+        {
+            public override void birdSound()
+            {
+                Console.WriteLine("The pigeon says:coo");
+            }
+        }
+
+    public class TestPolymorphism
+        {
+            static void Main(string[] args)
+            {
+                Bird myBird = new Bird();  // Create a Bird object
+                Bird myParrot = new Parrot();  // Create a Parrot object
+                Bird myPigeon = new Pigeon();  // Create a Pigeon object
+
+                myBird.birdSound();
+                myParrot.birdSound();
+                myPigeon.birdSound();
+            }
+        }
+    }
