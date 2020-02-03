@@ -1,0 +1,12 @@
+<html>
+<body>
+<form action="/action.php" method="get">
+email:<input type="name" name="userid"><br>
+<button type="submit">Submit</button><br>
+  <button type="submit" formnovalidate>Submit without validation</button>
+</form>
+
+<p><strong>Note:</strong> The formnovalidate attribute of the button tag is not supported in Internet Explorer.</p>
+
+</body>
+</html>

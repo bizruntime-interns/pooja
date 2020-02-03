@@ -1,0 +1,15 @@
+<html>
+<body>
+<p>I am good girl.I do my work on my time.</p>
+<button onclick="displayDate()">The time is?</button>
+
+<script>
+function displayDate() {
+  document.getElementById("demo").innerHTML = Date();
+}
+</script>
+
+<p id="demo"></p>
+
+</body>
+</html> 

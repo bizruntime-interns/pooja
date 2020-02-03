@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Select a new colour from the list.</p>
+
+<select id="mySelect" onchange="myFunction()">
+  <option value="Red">Red
+  <option value="Yellow">Yellow
+  <option value="Green">Green
+  <option value="Black">Black
+</select>
+
+<p>When you select a new colour, a function is triggered which outputs the value of the selected colour.</p>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("mySelect").value;
+  document.getElementById("demo").innerHTML = "You selected: " + x;
+}
+</script>
+
+</body>
+</html>
+

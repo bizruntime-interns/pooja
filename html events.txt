@@ -1,0 +1,21 @@
+<html>
+<body>
+<input onchange="alert(this.value)" type="red"> 
+<p>A function is triggered when the user is pressing a key in the input field.</p>
+
+<input type="text" onkeydown="myFunction()">
+
+<p>A function is triggered when the user is pressing a key in the input field.</p>
+
+<input type="text" onkeypress="myFunction()">
+<script>
+function myFunction() {
+  alert("You pressed a key inside the input field");
+}
+function myFunction() {
+  alert("You pressed a key inside the input field");
+}
+</script>
+
+</body>
+</html>
