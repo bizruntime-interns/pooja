@@ -1,0 +1,20 @@
+using System;
+using System.Collections.Generic;
+   public class SortedSetExampleProgram
+    {
+        public static void Main(string[] args)
+        {
+        var colors = new SortedSet<String>();
+        colors.Add("Red");
+        colors.Add("Green");
+        colors.Add("Orange");
+        colors.Add("Yellow");
+        colors.Add("Sky blue");
+        colors.Add("Black");
+        colors.Add("White");
+        foreach(var color in colors)
+        {
+            Console.WriteLine(color);
+        }
+        }
+    }

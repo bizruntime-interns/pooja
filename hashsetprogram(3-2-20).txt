@@ -1,0 +1,16 @@
+using System;
+using System.Collections.Generic;
+   public class hashsetexample {
+     public static void Main(string[] args)
+        {
+        var flowers = new HashSet<String>();
+        flowers.Add("Rose");
+        flowers.Add("lily");
+        flowers.Add("Red rose");
+        foreach(var flower in flowers)
+        {
+            Console.WriteLine(flower);
+        }
+        }
+    }
+

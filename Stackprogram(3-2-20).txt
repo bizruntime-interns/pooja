@@ -1,0 +1,20 @@
+using System;
+using System.Collections.Generic;
+   public  class StackExampleProgram
+    {
+       public static void Main(string[] args)
+        {
+        Stack<string> colors = new Stack<string>();
+        colors.Push("Red");
+        colors.Push("Green");
+        colors.Push("Pink");
+        colors.Push("Orange");
+        foreach(string color in colors)
+        {
+            Console.WriteLine(color);
+        }
+        Console.WriteLine("Peek element: " + colors.Peek());
+        Console.WriteLine("Pop: " + colors.Pop());
+        Console.WriteLine("After Pop, Peek element: " + colors.Peek());
+    }
+    }

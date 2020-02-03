@@ -1,0 +1,21 @@
+using System;
+using System.Collections.Generic;
+
+public class ListExample
+{
+    public static void Main(string[] args)
+    {
+        // Create a list of strings  
+        var colors = new List<string>();
+        colors.Add("Pink");
+        colors.Add("Green");
+        colors.Add("Orange");
+        colors.Add("Black");
+
+        // Iterate list element using foreach loop  
+        foreach (var color in colors)
+        {
+            Console.WriteLine(color);
+        }
+    }
+}

@@ -1,0 +1,16 @@
+using System;
+using System.Collections.Generic;
+
+ public class hashsetinitzalierProgram
+    {
+        public static void Main(string[] args)
+        {
+        var subjects = new HashSet<String> { "biology","chemistry","hindi","english","math","computer science" };
+        foreach(var subject in subjects)
+        {
+            Console.WriteLine(subject);
+        }
+
+        }
+    }
+

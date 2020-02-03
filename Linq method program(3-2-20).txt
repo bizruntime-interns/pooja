@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Method_Program
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+			IList<Student> studentList = new List<Student>() {
+				new Student() { StudentID = 1, StudentName = "Anu", Age = 10} ,
+				new Student() { StudentID = 2, StudentName = "Deepa",  Age = 21 } ,
+				new Student() { StudentID = 3, StudentName = "Kamal",  Age = 18 } ,
+				new Student() { StudentID = 4, StudentName = "Ram" , Age = 20} ,
+				new Student() { StudentID = 5, StudentName = "Dhanush" , Age = 15 }
+			};
+
+			// LINQ Query Method to find out teenager students
+			var teenAgerStudent = studentList.Where(s => s.Age > 12 && s.Age < 20);
+
+			Console.WriteLine("Teen age Students:");
+
+			foreach (Student std in teenAgerStudent)
+			{
+				Console.WriteLine(std.StudentName);
+			}
+		}
+	}
+
+	public class Student
+	{
+
+		public int StudentID { get; set; }
+		public string StudentName { get; set; }
+		public int Age { get; set; }
+
+	}
+}
