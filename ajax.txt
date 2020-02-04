@@ -1,0 +1,6 @@
+Hello this is my first program in ajax.
+My fav colors are:
+Red
+Green
+Pink
+Orange

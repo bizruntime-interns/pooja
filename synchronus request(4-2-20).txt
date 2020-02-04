@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Request Object</h1>
+
+<p id="demo">Change the content </p>
+
+<button type="button" onclick="loadDoc()">Change Message</button>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.open("GET", "info.txt", false);
+  xhttp.send();
+  document.getElementById("demo").innerHTML = xhttp.responseText;
+}
+</script>
+
+</body>
+</html>
