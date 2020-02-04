@@ -1,0 +1,64 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ConsoleApp1
+{
+    class Programme2
+    {
+        static void Main(string[] args)
+        {  
+//Create an object 'objDept1' and add some values in the list of the 'Department'  
+            List<Department> objDept1 = new List<Department>
+    (){  
+    //insert the data in the Department class  
+    new Department{DepId=1,DepName="Software"},
+    new Department{DepId=2,DepName="Finance"},
+    new Department{DepId=3,DepName="Health"}
+    };
+            //Create an object 'objEmp1' and add some values in the list of the 'Employee'  
+            List<Employee> objEmp1 = new List<Employee>()
+            {  
+    //add the data in the Employee class  
+            new Employee { EmpId=1,Name = "Devansh", DeptId=1 },
+            new Employee { EmpId=2,Name = "Shubham", DeptId=1 },
+            new Employee { EmpId=3,Name = "Aman", DeptId=3 },
+            new Employee { EmpId=4,Name = "Raman", DeptId =3},
+            new Employee { EmpId=5,Name = "Madhav"}
+            };
+            //used the linq queries to group the elements of both the table by using the join clause based on the name of the department  
+            var result = from d in objDept1
+                         join e in objEmp1 on d.DepId equals e.DeptId into empDept
+                         select new
+                         {
+                             DepartmentName = d.DepName,
+                             Employees = from emp2 in empDept
+                                         orderby emp2.Name
+                                         select emp2
+                         };
+            int totalItems = 0;
+            foreach (var empGroup in result)
+            {
+                Console.WriteLine(empGroup.DepartmentName);
+                foreach (var item in empGroup.Employees)
+                {
+                    totalItems++;
+                    Console.WriteLine("    {0}", item.Name);
+                }
+            }
+            Console.ReadLine();
+        }
+    }
+    //create the class Department and Employee having the different information  
+    class Department
+    {
+        public int DepId { get; set; }
+        public string DepName { get; set; }
+    }
+    class Employee
+    {
+        public int EmpId { get; set; }
+        public string Name { get; set; }
+        public int DeptId { get; set; }
+    }
+}

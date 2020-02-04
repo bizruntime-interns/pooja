@@ -1,0 +1,15 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+public class Program
+{
+	public static void Main()
+	{
+		IList<String> strList = new List<String>() { "Red", "Pink", "Green", "white", "purple" };
+
+		var commaSeperatedString = strList.Aggregate((s1, s2) => s1 + ", " + s2);
+
+		Console.WriteLine(commaSeperatedString);
+	}
+}

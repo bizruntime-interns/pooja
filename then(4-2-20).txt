@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Create object ObjStudent of the Student class having the list of the student information  
+            List<Student> Objstudent = new List<Student>()
+            {
+                new Student() { RoleId=10, Name = "Suresh ", Gender = "Male", Subjects = new List<string> { "Mathematics","Physics" } },
+                new Student() { RoleId=20, Name = "Amu", Gender = "Female", Subjects = new List<string> { "Entomology", "Botany" } },
+                new Student() { RoleId=30, Name = "Kavi", Gender = "Female", Subjects = new List<string> { "Computers","Operating System", "Java" } },
+                new Student() { RoleId=40, Name = "Ram", Gender = "Male", Subjects = new List<string> { "English", "Social Studies", "Chemistry" } },
+                new Student() { RoleId=50, Name = "Ravi", Gender = "Male", Subjects = new List<string> { "Accounting", "Charted" } }
+            };
+            //ThenByDescending() operator is used to sort the information of the student in the descending form  
+            var studentname = Objstudent.OrderBy(x => x.Name).ThenByDescending(x => x.RoleId);
+            foreach (var student in studentname)
+            {
+                Console.WriteLine("Name={0} StudentId={1}", student.Name, student.RoleId);
+            }
+            Console.ReadLine();
+        }
+    }
+    //create a student class  
+    class Student
+    {

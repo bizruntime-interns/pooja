@@ -1,0 +1,44 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+
+public class Program
+{
+	public static void Main()
+	{
+		// Student collection
+		IList<Student> studentList = new List<Student>() {
+				new Student() { StudentID = 1, StudentName = "Pavi", Age = 18 } ,
+				new Student() { StudentID = 2, StudentName = "Deepa",  Age = 15 } ,
+				new Student() { StudentID = 3, StudentName = "Anu",  Age = 26 } ,
+				new Student() { StudentID = 4, StudentName = "Ramu" , Age = 20 } ,
+				new Student() { StudentID = 5, StudentName = "Rahul" , Age = 19 }
+			};
+
+		var thenByResult = studentList.OrderBy(s => s.StudentName).ThenBy(s => s.Age);
+
+		var thenByDescResult = studentList.OrderBy(s => s.StudentName).ThenByDescending(s => s.Age);
+
+		Console.WriteLine("ThenBy:");
+
+		foreach (var std in thenByResult)
+			Console.WriteLine("Name: {0}, Age:{1}", std.StudentName, std.Age);
+
+		Console.WriteLine("ThenByDescending:");
+
+		foreach (var std in thenByDescResult)
+			Console.WriteLine("Name: {0}, Age:{1}", std.StudentName, std.Age);
+
+	}
+
+}
+
+public class Student
+{
+
+	public int StudentID { get; set; }
+	public string StudentName { get; set; }
+	public int Age { get; set; }
+
+}

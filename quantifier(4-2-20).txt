@@ -1,0 +1,15 @@
+using System;
+using System.Collections.Generic;
+
+public class Program
+{
+	public static void Main()
+	{
+		IList<int> intList = new List<int>() { 100, 200, 300, 400, 500 };
+
+		bool result = intList.Contains(100);
+
+		Console.WriteLine(result);
+
+	}
+}

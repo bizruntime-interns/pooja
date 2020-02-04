@@ -1,0 +1,25 @@
+using System;
+using System.Collections;
+    public  class Program
+    {
+       public static void Main(string[] args)
+        {
+			Hashtable ht = new Hashtable();
+
+			ht.Add(1, "red");
+			ht.Add(2, "green");
+			ht.Add(3, "blue");
+			ht.Add(4, "orange");
+			ht.Add("Fv", "pink");
+		
+
+			string strValue1 = (string)ht[2];
+			string strValue2 = (string)ht["Fv"];
+			
+
+			Console.WriteLine(strValue1);
+			Console.WriteLine(strValue2);
+			
+		}
+    }
+

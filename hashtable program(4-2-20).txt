@@ -1,0 +1,16 @@
+using System;
+using System.Collections;
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+			Hashtable ht = new Hashtable();
+
+			ht.Add(1, "Six");
+			ht.Add(2, "Seven");
+			ht.Add(3, "Three");
+
+			Console.WriteLine("Number of elements: {0}", ht.Count);
+		}
+    }
+

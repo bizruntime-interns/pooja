@@ -1,0 +1,64 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+
+namespace ConsoleApp1
+{
+    class Programme2
+    {
+        static void Main(string[] args)
+        {
+            /* create an object of the class 'department' and create a  
+             list of the department with the added record*/
+            List<Department> Dept = new List<Department>
+    (){
+    new Department{DepId=1,DepName="Software"},
+    new Department{DepId=2,DepName="Finance"},
+    new Department{DepId=3,DepName="DigitalMarketing"},
+    };
+            /* create an object of the class 'Employee' and create a 
+            list of the Employee with the added record*/
+            List<Employee> Emp = new List<Employee>
+            ()
+    {
+    new Employee { EmpId=1,Name = "Anu", DeptId=1 },
+    new Employee { EmpId=2,Name = "Deepa", DeptId=1 },
+    new Employee { EmpId=3,Name = "Arpita Rai", DeptId=2 },
+    new Employee { EmpId=4,Name = "Sateesh Alavala", DeptId =3},
+    new Employee { EmpId=5,Name = "Madhav ",DeptId=1},
+    };
+            /*Linq query apply to fetch the information of the 
+            employee name and department name 
+            here we mapped the employee with the department and store the result in the variable 'result'*/
+            var result = from d in Dept
+                         join e in Emp
+                         on d.DepId equals e.DeptId
+                         select new
+                         {
+                             EmployeeName = e.Name,
+                             DepartmentName = d.DepName
+                         };
+            //foreach loop traverse all the data in the result variable and store in item variable  
+            foreach (var item in result)
+            {
+                /* Console.WriteLine(item.EmployeeName + "\t | " + item.DepartmentName) 
+                 will print the name of the employee and name of the department*/
+                Console.WriteLine(item.EmployeeName + "\t | " + item.DepartmentName);
+            }
+            Console.ReadLine();
+        }
+    }
+    //Create class 'Department' and 'Employee' and set the variable name  
+    class Department
+    {
+        public int DepId { get; set; }
+        public string DepName { get; set; }
+    }
+    class Employee
+    {
+        public int EmpId { get; set; }
+        public string Name { get; set; }
+        public int DeptId { get; set; }
+    }
+}

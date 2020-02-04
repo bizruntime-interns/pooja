@@ -1,0 +1,37 @@
+using System;
+using System.Collections;
+
+public class Program
+{
+	public static void Main()
+	{
+		ArrayList arryList1 = new ArrayList();
+		arryList1.Add(500);
+		arryList1.Add(300);
+		arryList1.Add(100);
+		arryList1.Add(50);
+		arryList1.Add(700);
+
+		Console.WriteLine("Original Order:");
+
+		foreach (var item in arryList1)
+			Console.WriteLine(item);
+
+		arryList1.Reverse();
+
+		Console.WriteLine("Reverse Order:");
+
+		foreach (var item in arryList1)
+			Console.WriteLine(item);
+
+		arryList1.Sort();
+
+		Console.WriteLine("Ascending Order:");
+
+		foreach (var item in arryList1)
+			Console.WriteLine(item);
+	}
+}
+
+
+

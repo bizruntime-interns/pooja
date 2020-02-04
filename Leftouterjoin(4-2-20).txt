@@ -1,0 +1,61 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Programme2
+    {
+        static void Main(string[] args)
+        {
+            /*create an object of the class 'Department' 
+             and create a list with the added record*/
+            List<Department> objDept1 = new List<Department>()
+        {
+        new Department{DepId=1,DepName="Software"},
+        new Department{DepId=2,DepName="Finance"},
+    
+        };
+            /*create an object of the class 'Department' 
+            and create a list with the added record*/
+            List<Employee> objEmp1 = new List<Employee>()
+            {
+            new Employee { EmpId=1,Name = "Anu", DeptId=1 },
+            new Employee { EmpId=2,Name = "Deepa", DeptId=1 },
+            new Employee { EmpId=3,Name = "Arpita", DeptId=2 },
+            new Employee { EmpId=4,Name = "Mani", DeptId =1},
+            new Employee { EmpId=5,Name = "Kamal",DeptId=1}
+            };
+            /*use Linq Query to fetch the information by using the join clause  
+            and check the department containing the employee or not */
+            var result = from e in objEmp1
+                         join d in objDept1
+                         on e.DeptId equals d.DepId into empDept
+                         from ed in empDept.DefaultIfEmpty()
+                         select new
+                         {
+                             EmployeeName = e.Name,
+                             DepartmentName = ed == null ? "No Department" : ed.DepName
+                         };
+            foreach (var item in result)
+            {
+                Console.WriteLine(item.EmployeeName + "\t | " + item.DepartmentName);
+            }
+            Console.ReadLine();
+        }
+    }
+    class Department
+    {
+        public int DepId { get; set; }
+        public string DepName { get; set; }
+    }
+    class Employee
+    {
+        public int EmpId { get; set; }
+        public string Name { get; set; }
+        public int DeptId { get; set; }
+    }
+}

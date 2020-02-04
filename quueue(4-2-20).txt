@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+
+class Queue_example_programProgram
+    {
+        public static void Main(string[] args)
+        {
+            Queue<string> names = new Queue<string>();
+            names.Enqueue("Red");
+            names.Enqueue("Pink");
+            names.Enqueue("Green");
+            names.Enqueue("Black");
+            names.Enqueue("Orange");
+
+            foreach (string name in names)
+            {
+                Console.WriteLine(name);
+            }
+
+            Console.WriteLine("Peek element: " + names.Peek());
+            Console.WriteLine("Dequeue: " + names.Dequeue());
+            Console.WriteLine("After Dequeue, Peek element: " + names.Peek());
+        }
+    }

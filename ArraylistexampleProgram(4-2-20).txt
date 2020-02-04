@@ -1,0 +1,20 @@
+using System;
+using System.Collections;
+
+   public class ArraylistexampleProgram
+	{
+       public static void Main(string[] args)
+        {
+			IList myArryList = new ArrayList();
+			myArryList.Add(1);
+			myArryList.Add("Two");
+			myArryList.Add(6);
+			myArryList.Add(5.5);
+
+			myArryList.Insert(1, "Second Item");
+			myArryList.Insert(2, 300);
+
+			foreach (var val in myArryList)
+				Console.WriteLine(val);
+		}
+	}

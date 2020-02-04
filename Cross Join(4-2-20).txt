@@ -1,0 +1,89 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Programme2
+    {
+        static void Main(string[] args)
+        {
+            //Create the object of the Department List 'objDept1'    
+            List<Department> objDept1 = new List<Department>(){  
+    //assign the value in the Department  
+            new Department{DepId=1,DepName="Software"},
+            new Department{DepId=2,DepName="Finance"},
+            new Department{DepId=3,DepName="Health"}
+};
+            //Create the object of Employee List 'objEmp1'  
+            List<Employee> objEmp1 = new List<Employee>()
+
+{  
+//Insert the value in the Employee list  
+new Employee { EmpId=1,Name = "Vaishali", DeptId=1 },
+
+new Employee { EmpId=2,Name = "Pavi", DeptId=1 },
+
+new Employee { EmpId=3,Name = "Vinay", DeptId=2 },
+
+new Employee { EmpId=4,Name = "Sateesh", DeptId =1},
+
+new Employee { EmpId=5,Name = "Maya"}
+
+};
+            /*apply the linq queries to fetch the value from the Employee  
+            and Department list and store the value in variable 'result'*/
+            var result = from e in objEmp1
+
+                         from d in objDept1
+                             //Select will fetch the name of the employee and name of the department  
+                         select new
+
+                         {
+
+                             EmployeeName = e.Name,
+
+                             DepartmentName = d.DepName
+
+                         };
+            //foreach loop will print the value of the result with the help of 'WriteLine' funtion  
+            foreach (var item in result)
+
+            {
+
+                Console.WriteLine(item.EmployeeName + "\t | " + item.DepartmentName);
+
+            }
+
+            Console.ReadLine();
+
+        }
+
+    }
+    //Here we create the class named Department and Employee and assignt the variable   
+    class Department
+
+    {
+
+        public int DepId { get; set; }
+
+        public string DepName { get; set; }
+
+    }
+
+    class Employee
+
+    {
+
+        public int EmpId { get; set; }
+
+        public string Name { get; set; }
+
+        public int DeptId { get; set; }
+
+    }
+
+}
