@@ -1,0 +1,35 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
+namespace Single_operator
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<Employe> objEmploye = new List<Employe>()
+            {
+                new Employe() {Name = "Anu",Place = "Chennai"},
+                new Employe() {Name = "Deepa",Place = "Mumbai"},
+
+            };
+            int[] objList = { 1};
+            var user = objEmploye.Single(s => s.Name == "Anu");
+            string result = user.Name;
+            int val = objList.Single();
+            Console.WriteLine("Element from objEmploye: {0}", result);
+            Console.WriteLine("Element from objList: {0}", val);
+            Console.ReadLine();
+        }
+    }
+    class Employe
+    {
+        public string Name { get; set; }
+        public string Place { get; set; }
+    }
+}
+
+
+
+
+  

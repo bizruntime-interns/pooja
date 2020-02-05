@@ -1,0 +1,18 @@
+using System;
+using System.Linq;
+
+namespace first_operator
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Create an array objList of the type of int  
+            int[] objList = { 10, 20, 30, 40, 500 };
+            //First() method is used to return the first element from the array 'objList'  
+            int result = objList.First();
+            Console.WriteLine("Element from the List: {0}", result);
+            Console.ReadLine();
+        }
+    }
+}  

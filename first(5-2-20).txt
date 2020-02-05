@@ -1,0 +1,27 @@
+using System;
+using System.Linq;
+namespace first_or_default_operator_program
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] ListOb = { 105, 25, 38, 46, 549 };
+
+            int[] ValOb = { };
+
+            int result = (from l in ListOb select l).FirstOrDefault();
+
+            int val = (from x in ValOb
+
+                       select x).FirstOrDefault();
+
+            Console.WriteLine("Element from the List1: {0}", result);
+
+            Console.WriteLine("Element from the List2: {0}", val);
+
+            Console.ReadLine();
+
+        }
+
+    }

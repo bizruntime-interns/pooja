@@ -1,0 +1,26 @@
+using System;
+
+namespace SampleProgram
+{
+    public delegate string MyDel(string str);
+
+    class EventProgram
+    {
+        event MyDel MyEvent;
+
+        public EventProgram()
+        {
+            this.MyEvent += new MyDel(this.HelloWorld);
+        }
+        public string HelloWorld(string username)
+        {
+            return "Hello " + username;
+        }
+        static void Main(string[] args)
+        {
+            EventProgram obj1 = new EventProgram();
+            string result = obj1.MyEvent("My dear friend");
+            Console.WriteLine(result);
+        }
+    }
+}

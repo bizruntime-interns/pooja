@@ -1,0 +1,25 @@
+using System;
+using System.Linq;
+namespace Element_at_operator
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //create an array named 'a' type int with assigning values  
+            int[] a = { 1000, 250, 300, 40000, 5888,6,100 };
+            /*With the help of ElementAt() method will fetch the element from 
+                the specified position and store the value in 'result' and 'val' variable.*/
+            int result = a.ElementAt(1);
+            int val = a.ElementAt(3);
+           
+            /*WriteLine function will print the value of the specified index*/
+            Console.WriteLine("Element At Index 1: {0}", result);
+            Console.WriteLine("Element At Index 3: {0}", val);
+            Console.WriteLine("Element At Index 6:{0}", val);
+            Console.ReadLine();
+        }
+
+    }
+
+}  
