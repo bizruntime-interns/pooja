@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The XMLHttpRequest Object</h1>
+
+<h2>Retrieve data from XML file</h2>
+
+<p><b>Status:</b> <span id="B1"></span></p>
+<p><b>Status Message:</b> <span id="B2"></span></p>
+<p><b>Response:</b> <span id="B3"></span></p>
+
+<button onclick="loadDoc('bakery.xml')">Get XML data</button>
+
+<script>
+function loadDoc(url) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById('B1').innerHTML = this.status;
+      document.getElementById('B2').innerHTML = this.statusText;
+      document.getElementById('B3').innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET",url, true);
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>
