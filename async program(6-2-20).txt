@@ -1,0 +1,43 @@
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+
+
+namespace async_example_program
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Program begins");
+            Method1();
+            int num = 10;
+            if (num % 2 == 0)
+            {
+                Console.WriteLine("It is even number");
+                
+            }
+
+            Console.ReadLine();
+        }
+        static async void Method1()
+        {
+            int value = await Method2();
+            Console.WriteLine("output of method2:",+value);
+        }
+
+         static Task<int> Method2()
+        {
+            return Task.Run(() =>
+            {
+                Thread.Sleep(5000);
+                return 1;
+              
+            });
+        }
+
+
+
+    }
+}
+
