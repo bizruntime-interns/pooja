@@ -1,0 +1,57 @@
+using System;
+using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Count_Characters_in_file
+{
+    public partial class Form1 : Form
+    {
+        private const string Path = "C:\\data\\data.txt";
+        private const int V = 0;
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        private int CountCharacters()
+        {
+            int count = V;
+            using (StreamReader reader = GetReader())
+            {
+                string content = reader.ReadToEnd();
+                count = content.Length;
+                Thread.Sleep(5000);
+            }
+            return count;
+        }
+
+        private static StreamReader GetReader()
+        {
+            return new StreamReader(Path);
+        }
+
+
+
+
+        private async void BtnProcessFile(object sender, EventArgs e)
+
+        {
+            Task<int> task = new Task<int>(CountCharacters);
+            task.Start();
+            labelCount.Text = "Processingfile.Wait!!!";
+            int count = await task;
+            labelCount.Text = count.ToString() + "characters which is present in the file";
+
+        }
+
+      
+
+        
+        
+
+
+
+    }
+}
